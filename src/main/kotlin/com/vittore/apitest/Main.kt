@@ -23,7 +23,7 @@ fun Application.mymodule() {
     routing {
 
         get("/") {
-            call.respondText("Hello New World 2345!")
+            call.respondText("Hello World!")
         }
     }
 }

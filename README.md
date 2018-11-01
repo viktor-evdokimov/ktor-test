@@ -6,6 +6,15 @@ Simple hello world web server written in kotlin using Jetbrain's ktor web framew
 
 Supports hot reloading and  building fat jar for easy docker deployment
 
+## before you start
+
+```bash
+
+# instal gradle
+
+brew install gradle
+
+```
 
 ## To run in docker
 
@@ -21,17 +30,19 @@ cd ktor-test
 
 # build and build fat jar
 
-./gradlew shadowJar
+gradle shadowJar
 
 # build docker container
 
-docker build .
+docker build -t ktor-test .
 
-#run docker container with sha returned from last step
+#run docker container
 
-docker run -it -p 8080:8080 <sha>
+docker run -it -p 8080:8080 --rm ktor-test
 
 ```
+
+and go to http://localhost:8080 in browser
 
 ## To run in dev mode with hot reload
 
@@ -46,10 +57,10 @@ cd ktor-test
 
 # build and build fat jar
 
-./gradlew -t build
+gradle -t build
 
 # open new terminal 
 
-./gradlew run
+gradle run
 
 ```
